@@ -6,7 +6,7 @@
     { "action": "type", "selector": "#pwd", "value": "ENV_PASSWORD" },
     { "action": "click", "selector": ".btn-l-fill-main" },
     { "action": "waitForNavigation" },
-    { "action": "assertUrl", "expectedUrl": "https://www.saasda.cloud" },
+    { "action": "waitForURL", "expectedUrl": "https://www.saasda.cloud/service" },
     { "action": "screenshot", "path": "results/login-success.png" }
   ]
 }

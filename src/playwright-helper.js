@@ -24,7 +24,10 @@ const runTest = async (steps) => {
                 await page.click(step.selector);
                 break;
             case 'waitForNavigation':
-                await page.waitForNavigation();
+                await page.waitForNavigation({ waitUntil: 'networkidle' }); // 네트워크 요청이 멈출 때까지 대기
+                break;
+            case 'waitForURL':
+                await page.waitForURL(step.expectedUrl, { timeout: 3000 }); // URL이 바뀔 때까지 대기
                 break;
             case 'assertUrl':
                 const currentUrl = page.url();
