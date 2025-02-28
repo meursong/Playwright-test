@@ -1,0 +1,12 @@
+{
+  "name": "SaaSDA 로그인 테스트",
+  "steps": [
+    { "action": "goto", "url": "https://www.saasda.cloud/service/auth/login" },
+    { "action": "type", "selector": "#id", "value": "ENV_USERNAME" },
+    { "action": "type", "selector": "#pwd", "value": "ENV_PASSWORD" },
+    { "action": "click", "selector": ".btn-l-fill-main" },
+    { "action": "waitForNavigation" },
+    { "action": "assertUrl", "expectedUrl": "https://www.saasda.cloud" },
+    { "action": "screenshot", "path": "results/login-success.png" }
+  ]
+}
