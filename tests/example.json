@@ -1,0 +1,10 @@
+{
+  "name": "Google 검색 테스트",
+  "steps": [
+    { "action": "goto", "url": "https://www.google.com" },
+    { "action": "type", "selector": "input[name='q']", "value": "Playwright 자동화" },
+    { "action": "press", "selector": "input[name='q']", "key": "Enter" },
+    { "action": "waitForNavigation" },
+    { "action": "screenshot", "path": "results/google-search.png" }
+  ]
+}
