@@ -12,12 +12,12 @@ const runTest = async (steps) => {
                 await page.goto(step.url, { waitUntil: 'domcontentloaded' });
                 break;
             case 'type':
-                console.log(process.env.USERNAME)
                 const value = step.value === 'ENV_USERNAME' ? process.env.LOGIN_USERNAME :
                               step.value === 'ENV_PASSWORD' ? process.env.LOGIN_PASSWORD :
                               step.value;
                 await page.waitForSelector(step.selector, { state: 'visible' });
                 await page.fill(step.selector, value);
+                console.log(value)
                 break;
             case 'click':
                 await page.waitForSelector(step.selector, { state: 'visible' });
