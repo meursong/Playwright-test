@@ -7,6 +7,6 @@
     { "action": "click", "selector": ".btn-l-fill-main" },
     { "action": "waitForNavigation" },
     { "action": "waitForURL", "expectedUrl": "https://www.saasda.cloud/service" },
-    { "action": "screenshot", "path": "results/login-success.png" }
+    { "action": "screenshot", "path": "results/logout-success.png" }
   ]
 }
