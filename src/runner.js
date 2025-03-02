@@ -29,8 +29,16 @@ async function main() {
                 testResults.push({ name: file, status: 'failed', error: error.message });
             }
         }
+        // 현재 날짜와 시간으로 파일명 생성
+        const now = new Date();
+        const dateTime = now.toISOString()
+            .replace(/[:.]/g, '-')
+            .replace('T', '_')
+            .slice(0, 19);
+
         // 결과 JSON 파일 저장
-        fs.writeFileSync('results/test-results.json', JSON.stringify(testResults, null, 2));
+        fs.writeFileSync(`results/test-results-${dateTime}.json`, JSON.stringify(testResults, null, 2));
+
         console.log('모든 테스트 완료!');
     }
     const fullPath = path.resolve(targetPath);
