@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const { resolveStepValue } = require('./value-resolver');
 require('dotenv').config();
 
 const runTest = async (steps) => {
