@@ -5,6 +5,7 @@ require('dotenv').config();
 const runTest = async (steps) => {
     const browser = await chromium.launch({ headless: false });
     const page = await browser.newPage();
+    const testContext = {}; // 테스트 실행 중 공유할 컨텍스트
 
     try {
         for (const step of steps) {
