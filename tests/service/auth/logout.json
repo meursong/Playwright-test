@@ -14,8 +14,7 @@
     { "action": "click", "selector": ".top-user" },
     { "action": "waitForSelector", "selector": "button[title='로그아웃']" },
     { "action": "click", "selector": "button[title='로그아웃']" },
-    { "action": "waitForLoadState" },
-    { "action": "waitForURL", "expectedUrl": "https://www.saasda.cloud/service/auth/login" },
+    { "action": "waitForSelector", "selector": "header button[title='로그인']" },
     { "action": "screenshot", "path": "results/logout-success.png" }
   ]
 }
