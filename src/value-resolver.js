@@ -1,8 +1,19 @@
+const path = require('path');
+require('dotenv').config();
+
+// 환경변수 로드 상태 자세히 확인
+console.log('현재 작업 디렉토리:', process.cwd());
+console.log('.env 파일 경로:', path.resolve(process.cwd(), '.env'));
+console.log('환경변수 목록:', Object.keys(process.env));
+
 // value-resolver.js 파일 생성
 const resolveValue = (value, context = {}) => {
     // ENV_ 로 시작하는 환경 변수 처리
     if (typeof value === 'string' && value.startsWith('ENV_')) {
+        console.log("ENV 처리중입니다.");
         const envKey = value.replace('ENV_', '');
+
+        console.log("process.env[envKey] = ", process.env[envKey]);
         return process.env[envKey] || '';
     }
 

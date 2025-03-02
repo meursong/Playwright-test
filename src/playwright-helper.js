@@ -18,18 +18,19 @@ const runTest = async (steps) => {
                     const value = resolveStepValue(step, testContext);
                     await page.waitForSelector(step.selector, { state: 'visible' });
                     await page.fill(step.selector, value);
-                    console.log(value);
                     break;
                 case 'click':
                     await page.waitForSelector(step.selector, { state: 'visible' });
                     await page.click(step.selector);
                     break;
                 case 'waitForLoadState':
-                    await page.waitForLoadState('networkidle');
+                    await page.waitForLoadState('networkidle', {
+                        timeout: 10000
+                    });
                     break;
                 case 'waitForURL':
                     await page.waitForURL(step.expectedUrl, {
-                        timeout: 3000,  // 타임아웃 시간 증가
+                        timeout: 10000,  // 타임아웃 시간 설정
                         waitUntil: 'networkidle'  // 네트워크가 안정화될 때까지 대기
                     });
                     break;
