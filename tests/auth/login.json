@@ -5,7 +5,7 @@
     { "action": "type", "selector": "#id", "value": "ENV_USERNAME" },
     { "action": "type", "selector": "#pwd", "value": "ENV_PASSWORD" },
     { "action": "click", "selector": ".btn-l-fill-main" },
-    { "action": "waitForNavigation" },
+    { "action": "waitForLoadState" },
     { "action": "waitForURL", "expectedUrl": "https://www.saasda.cloud/service" },
     { "action": "screenshot", "path": "results/logout-success.png" }
   ]

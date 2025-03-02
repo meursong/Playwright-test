@@ -22,8 +22,8 @@ const runTest = async (steps) => {
                     await page.waitForSelector(step.selector, { state: 'visible' });
                     await page.click(step.selector);
                     break;
-                case 'waitForNavigation':
-                    await page.waitForNavigation({ waitUntil: 'networkidle' });
+                case 'waitForLoadState':
+                    await page.waitForLoadState('networkidle');
                     break;
                 case 'waitForURL':
                     await page.waitForURL(step.expectedUrl, {
