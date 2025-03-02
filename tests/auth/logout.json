@@ -2,8 +2,10 @@
   "name": "SaaSDA 로그인-로그아웃 테스트",
   "steps": [
     { "action": "goto", "url": "https://www.saasda.cloud/service/auth/login" },
-    { "action": "type", "selector": "#id", "value": "ENV_USERNAME" },
-    { "action": "type", "selector": "#pwd", "value": "ENV_PASSWORD" },
+    { "action": "wait", "milliseconds": 3000 },
+    { "action": "type", "selector": "#id", "value": "ENV_LOGIN_USERNAME" },
+    { "action": "wait", "milliseconds": 3000 },
+    { "action": "type", "selector": "#pwd", "value": "ENV_LOGIN_PASSWORD" },
     { "action": "click", "selector": ".btn-l-fill-main" },
     { "action": "`waitForLoadState" },
     { "action": "waitForURL", "expectedUrl": "https://www.saasda.cloud/service" },
