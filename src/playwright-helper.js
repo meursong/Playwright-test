@@ -44,6 +44,11 @@ const runTest = async (steps) => {
                 case 'screenshot':
                     await page.screenshot({ path: step.path });
                     break;
+                case 'wait':
+                    const milliseconds = step.milliseconds || step.ms || (step.seconds * 1000) || 1000;
+                    console.log(`${milliseconds}ms 동안 대기중...`);
+                    await page.waitForTimeout(milliseconds);
+                    break;
                 default:
                     console.warn(`Unknown action: ${step.action}`);
             }
