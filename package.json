@@ -1,35 +1,35 @@
 {
   "name": "playwright-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "- **dotenv** (v16.4.7)\r     - 환경 변수를 `.env` 파일에서 관리할 수 있게 해주는 라이브러리\r     - 프로젝트의 설정값과 민감한 정보를 안전하게 관리",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "test": "playwright test",
-    "lint": "eslint . --ext .ts",
-    "format": "prettier --write \"src/**/*.ts\" \"src/tests/**/*.ts\"",
-    "type-check": "tsc --noEmit"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meursong/Playwright-test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "fs-extra": "^11.3.0",
-    "playwright": "^1.50.1",
-    "yaml": "^2.7.0",
-    "zod": "^3.24.2"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/meursong/Playwright-test/issues"
   },
+  "homepage": "https://github.com/meursong/Playwright-test#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.5.1",
     "@playwright/test": "^1.50.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.13.8",
-    "cross-env": "^7.0.3",
-    "expect-playwright": "^0.8.0",
-    "jest": "^29.7.0",
+    "dotenv": "^16.4.7",
+    "fs-extra": "^11.3.0",
+    "playwright": "^1.50.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
   }
 }
