@@ -1,7 +1,9 @@
+// 테스트 실행 핵심 클래스
+
 import { chromium, Browser, Page } from 'playwright';
-import { env } from '../config/environment';
+import { env } from '../config/env-config';
 import { testConfig } from '../config/test-config';
-import { FileHandler } from '../utils/file-handler';
+import { FileHandler } from '../helpers/file-handler';
 
 export class TestRunner {
   private browser?: Browser;

@@ -1,3 +1,5 @@
+// 테스트 설정
+
 import { readFileSync } from 'fs-extra';
 import yaml from 'yaml';
 import path from 'path';

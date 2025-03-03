@@ -1,3 +1,5 @@
+// 환경 변수 설정
+
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
@@ -11,6 +13,6 @@ const envSchema = z.object({
   TEST_PASSWORD: z.string(),
 });
 
-export type Environment = z.infer<typeof envSchema>;
+export type EnvConfig = z.infer<typeof envSchema>;
 
 export const env = envSchema.parse(process.env);

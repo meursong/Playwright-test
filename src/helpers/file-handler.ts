@@ -1,6 +1,8 @@
+// 파일 처리 유틸리티
+
 import { ensureDir, writeFile } from 'fs-extra';
 import path from 'path';
-import { env } from '../config/environment';
+import { env } from '../config/env-config';
 
 export class FileHandler {
   static async saveScreenshot(testName: string, data: Buffer): Promise<string> {

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { env } from '../../src/config/environment';
+import { env } from '../../config/env-config';
 
 test.describe('기본 웹사이트 테스트', () => {
   test('홈페이지 로드 테스트', async ({ page }) => {
