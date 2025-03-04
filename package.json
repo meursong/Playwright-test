@@ -1,25 +1,60 @@
 {
   "name": "playwright-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate:scripts": "ts-node src/config/generate-test-scripts.ts",
+    "test:all:staging": "npm-run-all -s test:saasdaService:staging test:saasdaLearn:staging test:saasdaAdmin:staging test:prpt:staging",
+    "test:all:prod": "npm-run-all -s test:saasdaService:prod test:saasdaLearn:prod test:saasdaAdmin:prod test:prpt:prod",
+    "test:all": "npm-run-all -s test:saasdaService:all test:saasdaLearn:all test:saasdaAdmin:all test:prpt:all",
+    "test:saasdaService:dev": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaService/config.ts",
+    "test:saasdaService:dev:ui": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaService/config.ts --ui",
+    "test:saasdaService:staging": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaService/config.ts",
+    "test:saasdaService:staging:ui": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaService/config.ts --ui",
+    "test:saasdaService:prod": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaService/config.ts",
+    "test:saasdaService:prod:ui": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaService/config.ts --ui",
+    "test:saasdaService:all": "npm-run-all -s test:saasdaService:dev test:saasdaService:staging test:saasdaService:prod",
+    "test:saasdaLearn:dev": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaLearn/config.ts",
+    "test:saasdaLearn:dev:ui": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaLearn/config.ts --ui",
+    "test:saasdaLearn:staging": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaLearn/config.ts",
+    "test:saasdaLearn:staging:ui": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaLearn/config.ts --ui",
+    "test:saasdaLearn:prod": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaLearn/config.ts",
+    "test:saasdaLearn:prod:ui": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaLearn/config.ts --ui",
+    "test:saasdaLearn:all": "npm-run-all -s test:saasdaLearn:dev test:saasdaLearn:staging test:saasdaLearn:prod",
+    "test:saasdaAdmin:dev": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaAdmin/config.ts",
+    "test:saasdaAdmin:dev:ui": "cross-env NODE_ENV=dev playwright test -c src/tests/saasdaAdmin/config.ts --ui",
+    "test:saasdaAdmin:staging": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaAdmin/config.ts",
+    "test:saasdaAdmin:staging:ui": "cross-env NODE_ENV=staging playwright test -c src/tests/saasdaAdmin/config.ts --ui",
+    "test:saasdaAdmin:prod": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaAdmin/config.ts",
+    "test:saasdaAdmin:prod:ui": "cross-env NODE_ENV=prod playwright test -c src/tests/saasdaAdmin/config.ts --ui",
+    "test:saasdaAdmin:all": "npm-run-all -s test:saasdaAdmin:dev test:saasdaAdmin:staging test:saasdaAdmin:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meursong/Playwright-test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "fs-extra": "^11.3.0",
-    "playwright": "^1.50.1",
-    "yaml": "^2.7.0"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/meursong/Playwright-test/issues"
   },
+  "homepage": "https://github.com/meursong/Playwright-test#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.5.1",
     "@playwright/test": "^1.50.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.8",
     "cross-env": "^7.0.3",
-    "expect-playwright": "^0.8.0",
-    "jest": "^29.7.0"
+    "dotenv": "^16.4.7",
+    "fs-extra": "^11.3.0",
+    "playwright": "^1.50.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
   }
 }
