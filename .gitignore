@@ -133,3 +133,5 @@ dist
 results/*
 !results/test-results-*
 
+playwright-report/*
+
