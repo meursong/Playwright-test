@@ -71,3 +71,15 @@
 
 - **@types/fs-extra**
     - fs-extra 라이브러리의 TypeScript 타입 정의
+
+
+
+### 컨벤션
+
+1. 파일 용도에 따른 접미사 규칙:
+    - 헬퍼 클래스: `*-helper.ts`
+    - 설정 파일: `*-config.ts`
+    - 유틸리티: `*-utils.ts`
+    - 테스트 파일: `*.spec.ts` 또는 `*.test.ts`
+    - 타입 정의: `*.types.ts`
+    - 상수: `*-constants.ts`
