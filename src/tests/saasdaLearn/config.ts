@@ -1,6 +1,6 @@
 // src/tests/saasdaLearn/config.ts
 import { PlaywrightTestConfig } from '@playwright/test';
-import { baseConfig } from '../common/baseConfig';
+import { baseConfig } from '../common/base-config';
 import { join } from 'path';
 
 const config: PlaywrightTestConfig = {

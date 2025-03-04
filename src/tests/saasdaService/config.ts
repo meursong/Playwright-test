@@ -1,6 +1,6 @@
 // src/tests/saasdaService/config.ts
 import { PlaywrightTestConfig } from '@playwright/test';
-import { baseConfig } from '../common/baseConfig';
+import { baseConfig } from '../common/base-config';
 import { join } from 'path';
 import dotenv from 'dotenv';
 import path from 'path';

@@ -1,4 +1,4 @@
-// src/tests/common/baseConfig.ts
+// src/tests/common/base-config.ts
 import { PlaywrightTestConfig } from '@playwright/test';
 import { join } from 'path';
 
