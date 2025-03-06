@@ -6,17 +6,20 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
+    "outDir": "./dist",
+    "rootDir": ".",  // "src"에서 "."로 변경
+    "baseUrl": ".",  // "."로 변경
     "paths": {
       "@/*": ["src/*"],
       "@config/*": ["src/config/*"],
       "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"]
-    },
-    "outDir": "./dist",
-    "rootDir": "./src"
+      "@utils/*": ["src/utils/*"],
+      "@tests/*": ["tests/*"]  // tests 경로도 추가
+    }
+
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules"]
 }
