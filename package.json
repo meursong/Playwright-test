@@ -4,7 +4,22 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
+    "test": "playwright test --config=src/config/test.config.ts",
+    "test:ui": "playwright test --config=src/config/test.config.ts --ui",
+    "test:debug": "playwright test --config=src/config/test.config.ts --debug",
 
+    "test:auth": "playwright test tests/service/auth --config=src/config/test.config.ts",
+    "test:auth:ui": "playwright test tests/service/auth --config=src/config/test.config.ts --ui",
+    "test:auth:debug": "playwright test tests/service/auth --config=src/config/test.config.ts --debug",
+
+    "test:chrome": "cross-env BROWSER=chromium playwright test --config=src/config/test.config.ts",
+    "test:firefox": "cross-env BROWSER=firefox playwright test --config=src/config/test.config.ts",
+    "test:safari": "cross-env BROWSER=webkit playwright test --config=src/config/test.config.ts",
+
+    "show-report": "playwright show-report",
+
+    "codegen": "playwright codegen",
+    "install-browsers": "playwright install"
   },
   "repository": {
     "type": "git",
