@@ -1,9 +1,29 @@
-### Playwright-test
+# Playwright-test
 
-## Node : v20.17.0
-## npm : v11.1.0
 
-# Libraries
+## Setting
+### Node : v20.17.0
+### npm : v11.1.0
+
+
+## Project Structure
+
+#### `/tests` 폴더
+- E2E(End-to-End) 테스트 자동화 스크립트가 위치
+- Playwright 테스트 파일들 포함
+- 서비스별로 분리된 테스트 구성:
+  - `common`: 공통 테스트 설정 및 유틸리티
+  - `saasdaService`: 서비스 관련 테스트
+  - `saasdaAdmin`: 관리자 기능 테스트
+  - `saasdaLearn`: 학습 기능 테스트
+
+#### `/pages` 폴더
+- Page Object Model (POM) 패턴 구현
+- 각 웹 페이지의 요소와 동작을 캡슐화하는 클래스들 포함
+- 구조:
+  - `common`: 공통으로 사용되는 기본 페이지 클래스
+  - 각 기능별 하위 폴더: 관련 페이지 객체들을 그룹화
+
 
 ## Dependencies
 - **dotenv** (v16.4.7)
@@ -73,8 +93,8 @@
     - fs-extra 라이브러리의 TypeScript 타입 정의
 
 
-
-### 컨벤션
+  
+## 컨벤션
 
 1. 파일 용도에 따른 접미사 규칙:
     - 헬퍼 클래스: `*-helper.ts`
@@ -83,3 +103,5 @@
     - 테스트 파일: `*.spec.ts` 또는 `*.test.ts`
     - 타입 정의: `*.types.ts`
     - 상수: `*-constants.ts`
+
+
