@@ -5,7 +5,7 @@ const config: PlaywrightTestConfig = {
   testDir: '../../tests',  // 프로젝트 루트의 tests 디렉토리 기준
   timeout: 30000,
   expect: {
-    timeout: 5000
+    timeout: 10000
   },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -14,9 +14,10 @@ const config: PlaywrightTestConfig = {
   reporter: 'html',
   use: {
     baseURL: env.BASE_URL,
-    headless: env.HEADLESS === 'true',
     browserName: env.BROWSER,
-    actionTimeout: 0,
+    headless: env.HEADLESS === 'true',
+    navigationTimeout: 30000,  // 페이지 탐색 타임아웃
+    actionTimeout: 15000,      // 액션(클릭 등) 타임아웃
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
