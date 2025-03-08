@@ -9,16 +9,16 @@ export class LoginPage {
     this.pageHelper = new PageActionHelper(page);
   }
 
-  async login(email: string, password: string): Promise<void> {
+  async login(accountId: string, password: string): Promise<void> {
     const loginSteps: ActionStep[] = [
       {
         action: 'type',
-        selector: 'label:has-text("이메일")',
-        value: email
+        selector: '#id',  // 이메일 입력 필드
+        value: accountId
       },
       {
         action: 'type',
-        selector: 'label:has-text("비밀번호")',
+        selector: '#pwd',  // 비밀번호 입력 필드
         value: password
       },
       {

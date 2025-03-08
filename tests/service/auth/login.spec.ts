@@ -10,7 +10,16 @@ test.describe('로그인 테스트', () => {
 
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
-    await page.goto('/service/auth/login');
+
+    // 1. 메인 페이지로 이동
+    await page.goto('/');
+
+    // 2. 로그인 링크 클릭
+    await page.getByRole('link', { name: '로그인' }).click();
+
+    // 3. 로그인 페이지로 이동됐는지 확인
+    await expect(page).toHaveURL('/service/auth/login');
+
   });
 
   test('정상 로그인', async () => {
